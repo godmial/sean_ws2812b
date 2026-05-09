@@ -8,23 +8,43 @@
 #include "msh.h"
 
 #ifndef WS2812B_SPI_BUS_NAME
-#define WS2812B_SPI_BUS_NAME "spi1"
+    #ifdef SEAN_WS2812B_SPI_BUS_NAME
+        #define WS2812B_SPI_BUS_NAME SEAN_WS2812B_SPI_BUS_NAME
+    #else
+        #define WS2812B_SPI_BUS_NAME "spi1"
+    #endif
 #endif
 
 #ifndef WS2812B_SPI_DEV_NAME
-#define WS2812B_SPI_DEV_NAME "spi10"
+    #ifdef SEAN_WS2812B_SPI_DEV_NAME
+        #define WS2812B_SPI_DEV_NAME SEAN_WS2812B_SPI_DEV_NAME
+    #else
+        #define WS2812B_SPI_DEV_NAME "spi10"
+    #endif
 #endif
 
 #ifndef WS2812B_SPI_CS_PORT
-#define WS2812B_SPI_CS_PORT GPIOB
+    #ifdef SEAN_WS2812B_SPI_CS_PORT
+        #define WS2812B_SPI_CS_PORT SEAN_WS2812B_SPI_CS_PORT
+    #else
+        #define WS2812B_SPI_CS_PORT GPIOB
+    #endif
 #endif
 
 #ifndef WS2812B_SPI_CS_PIN
-#define WS2812B_SPI_CS_PIN GPIO_PIN_12
+    #ifdef SEAN_WS2812B_SPI_CS_PIN
+        #define WS2812B_SPI_CS_PIN SEAN_WS2812B_SPI_CS_PIN
+    #else
+        #define WS2812B_SPI_CS_PIN GPIO_PIN_12
+    #endif
 #endif
 
 #ifndef WS2812B_LED_NUMS
-#define WS2812B_LED_NUMS 63
+    #ifdef SEAN_WS2812B_LED_NUMS
+        #define WS2812B_LED_NUMS SEAN_WS2812B_LED_NUMS
+    #else
+        #define WS2812B_LED_NUMS 63
+    #endif
 #endif
 
 #define WS2812B_RGB_BITS 24
